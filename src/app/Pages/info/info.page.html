@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clima</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">Volver</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Ciudad</ion-label>
+    <ion-input [(ngModel)]="city" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="getWeather()">
+    Obtener Clima
+  </ion-button>
+
+  <div *ngIf="weatherData" class="weather-card">
+    <h2>{{ weatherData.name }}</h2>
+    <img
+      [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
+      alt="Icono del clima"
+      class="icon"
+    />
+    <div class="temperature">{{ weatherData.main.temp }} °C</div>
+    <p class="description">{{ weatherData.weather[0].description }}</p>
+  </div>
+</ion-content>

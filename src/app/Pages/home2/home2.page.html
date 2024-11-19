@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+  </ion-buttons>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Climatix
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Tarjeta para Clima Soleado -->
+  <ion-card class="sunny-card">
+    <ion-card-header>
+      <ion-card-title>Soleado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      El clima es cálido y soleado. Disfruta del día.
+    </ion-card-content>
+    <ion-button expand="full" color="warning" (click)="goToSoleado()">
+      <ion-icon slot="start" name="sunny-outline"></ion-icon>
+      Ver detalles
+    </ion-button>
+  </ion-card>
+
+  <!-- Tarjeta para Clima Lluvioso -->
+  <ion-card class="rainy-card">
+    <ion-card-header>
+      <ion-card-title>Lluvioso</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Hay probabilidad de lluvias. ¡No olvides tu paraguas!
+    </ion-card-content>
+    <ion-button expand="full" color="tertiary" (click)="goToDetails()">
+      <ion-icon slot="start" name="rainy-outline"></ion-icon>
+      Ver detalles
+    </ion-button>
+  </ion-card>
+
+  <!-- Tarjeta para Clima Nublado -->
+  <ion-card class="cloudy-card">
+    <ion-card-header>
+      <ion-card-title>Nublado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      El cielo está cubierto de nubes. Posiblemente cambie más tarde.
+    </ion-card-content>
+    <ion-button expand="full" color="medium" (click)="goToInfo()">
+      <ion-icon slot="start" name="cloudy-outline"></ion-icon>
+      Ver detalles
+    </ion-button>
+  </ion-card>
+</ion-content>
